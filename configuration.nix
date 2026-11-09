@@ -38,6 +38,12 @@
   };
   services.desktopManager.plasma6.enable = true;
 
+# hicabi kullanıcısı için otomatik oturum açma
+services.displayManager.autoLogin = {
+  enable = true;
+  user = "hicabi";
+};
+
   # KDE PIM kapalı
   programs.kde-pim.enable = false;
 
@@ -111,6 +117,8 @@
     unzip
     pciutils
     gnumake
+    pkgs.lact
+
   ];
 
   # Ses Ayarları (Pipewire)
@@ -135,5 +143,8 @@
 
   # KDE Plasma'nın Bluetooth widget'ı ve ayar yöneticisi için gerekli paketler
   services.blueman.enable = true; # İsteğe bağlıdır ancak sorun giderme için faydalıdır
+
+  # Servis ayarını ana süslü parantezlerin içine, bağımsız bir satır olarak ekleyin:
+services.lact.enable = true;
 }
 
