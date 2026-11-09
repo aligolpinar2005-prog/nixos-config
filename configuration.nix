@@ -35,7 +35,10 @@
   };
   services.desktopManager.plasma6.enable = true;
 
-  # KMail, Akonadi ve gereksiz KDE araçlarını sistemden tamamen çıkar
+  # KDE PIM kapalı: KMail, Akonadi ve Kontact gibi gereksiz uygulamalar kurulmaz
+  programs.kde-pim.enable = false;
+
+  # Plasma 6 varsayılanlarından istenmeyen ek uygulamaları çıkar
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     akonadi
     kmail
@@ -44,6 +47,9 @@
     kontact
     korganizer
     kaddressbook
+    elisa
+    khelpcenter
+    krdp
   ];
 
   # Flatpak Desteği
