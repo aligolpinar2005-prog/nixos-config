@@ -127,4 +127,13 @@
   networking.networkmanager.enable = true;
 
   system.stateVersion = "24.11";
+
+
+  # Bluetooth'u etkinleştir
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; # Bilgisayar açıldığında Bluetooth'u çalıştır
+
+  # KDE Plasma'nın Bluetooth widget'ı ve ayar yöneticisi için gerekli paketler
+  services.blueman.enable = true; # İsteğe bağlıdır ancak sorun giderme için faydalıdır
 }
+
